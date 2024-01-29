@@ -1,5 +1,6 @@
 function setup() {
   createCanvas(1000, 1000);
+  angleMode(DEGREES);
   pg1 = createGraphics(200, 100);
   pg2 = createGraphics(300,300);
   pg3 = createGraphics(200,100); 
@@ -26,9 +27,7 @@ function draw() {
   pg3.background(0);
   pg3.noStroke();
   pg3.fill('yellow');
-  pg3.circle(50, 50, 75);
-  pg3.fill(0);
-  pg3.triangle(11,11,11,70,50,50);
+  pg3.arc(50,50,75,75,-8.5,2.5);
   pg3.fill('red');
   pg3.circle(150,50,75);
   pg3.rect(112.5,45,75,45);
@@ -53,12 +52,12 @@ function draw() {
   image(pg4,0,500);
 }
 
-//the following function was taken  from p5 website
+
 function star(context, x, y, radius1, radius2, npoints) {
-  let angle = TWO_PI / npoints;
+  let angle = 360 / npoints;
   let halfAngle = angle / 2.0;
   context.beginShape();
-  for (let a = 0; a < TWO_PI; a += angle) {
+  for (let a = 0; a < 360; a += angle) {
     let sx = x + cos(a) * radius2;
     let sy = y + sin(a) * radius2;
     vertex(sx, sy);
